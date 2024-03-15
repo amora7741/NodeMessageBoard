@@ -23,4 +23,20 @@ router.get('/new', function (req, res, next) {
   res.render('form');
 });
 
+router.post('/new', function (req, res, next) {
+  // Extract data from the form submission
+  const messageText = req.body.message;
+  const messageUser = req.body.author;
+
+  // Push the new message into the messages array
+  messages.push({
+    text: messageText,
+    user: messageUser,
+    added: new Date(),
+  });
+
+  // Redirect users back to the index page after submitting a new message
+  res.redirect('/');
+});
+
 module.exports = router;
