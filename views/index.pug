@@ -4,12 +4,13 @@ block content
   h1= title
   p Welcome to #{title}
 
-  a(href='/new') Add New Message
+  button.bluerectangle
+    a(href='/new') Add New Message
 
   // Iterate over messages array
   each message in messages
     // Display user, text, and added date for each message
-    .message
+    .message.bluerectangle
       p User: #{message.user}
       p Text: #{message.text}
       p Added Date: #{message.added}
