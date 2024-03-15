@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  // Iterate over messages array
+  each message in messages
+    // Display user, text, and added date for each message
+    .message
+      p User: #{message.user}
+      p Text: #{message.text}
+      p Added Date: #{message.added}
